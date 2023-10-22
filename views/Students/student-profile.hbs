@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/boxicon.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <title>My Profile</title>
+    <style>
+      body{
+        background-color: #fdd55a;
+      }
+      .bg {
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #02277b;
+        background-size: cover;
+        background-attachment: fixed;       
+        }
+
+      .btn{
+        background-color: #02277b;
+        color: #fdd55a;
+      }
+
+      .btn:hover{
+        background-color: #fdd55a ;
+        color: #02277b;
+      }
+
+      .txt{
+        color: #02277b;
+      }
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+    </style>
+    <link href="./css/navbars.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark" aria-label="Third navbar example">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">USIU INTERNATIONAL STUDENT VISA PORTAL</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample03">
+        <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">My Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="/login-page" style="text-align: right;">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="/sign-up-page">Sign-up</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    </nav>
+    {{!-- <h1>The profile page of donors</h1> --}}
+    <section class="bg">
+  <div class="container py-5">
+    {{!-- <div class="row">
+      <div class="col">
+        <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
+          <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+          </ol>
+        </nav>
+      </div>
+    </div> --}}
+
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="card mb-4">
+          <div class="card-body text-center">
+            <h5 class="my-3" id="firstName">Welcome Back!</h5>
+            <div class="d-flex justify-content-center mb-2">
+              {{!-- <button type="button" class="btn">Edit Profile</button> --}}
+              <a class="btn btn-outline-primary ms-2" href="/logout" role="button">Logout</a>
+              <a class="btn btn-outline-primary ms-2" href="/cover-letter-request" role="button">Request Cover Letter</a>
+              <a class="btn btn-outline-primary ms-2" href="/apply" role="button">Request Application</a>
+
+            </div>
+          </div>
+        </div>
+        
+        {{!-- <div class="card mb-5">
+        <center><canvas id="cht" style="max-width: 700px;width: 100%;">
+          <a class="btn btn-outline-primary ms-2" href="/logout" role="button">Logout</a>
+          <a class="btn btn-outline-primary ms-2" href="/logout" role="button">Request Cover Letter</a>
+          <a class="btn btn-outline-primary ms-2" href="/apply" role="button">Request Application</a>
+
+        </canvas></center>
+           --}}
+        </div>
+      </div>
+
+      <div class="col-lg-8">
+        <div class="card mb-4">
+          <div class="card-body">     
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0" >ID</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0" id="ID"></p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0" >Full Name</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0" id="Full_Name"></p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Email</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0" id="email"></p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Request Status</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0" id="PassStatus"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{!-- <div class="row">
+          <div class="col-md-16">
+            <div class="card mb-4 mb-md-0">
+              <div class="card-body" id="cards">
+                <p class="mb-4">Your current <span class="txt">Student Pass</span> 
+                </p>
+              </div>
+            </div>
+          </div>
+        </div> --}}
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+<script src="./js/student.js"></script>
+</html>

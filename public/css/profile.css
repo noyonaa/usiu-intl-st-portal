@@ -1,0 +1,90 @@
+/* Custom CSS for the My Profile page */
+
+/* Background */
+.bg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/images/donate2.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* Buttons */
+.btn {
+    background-color: #006b57;
+    color: #fdd55a;
+}
+
+.btn:hover {
+    background-color: #fdd55a;
+    color: #006b57;
+}
+
+/* Text color */
+.txt {
+    color: #006b57;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    background-color: #f8f9fa;
+    border-radius: 0.25rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+}
+
+.breadcrumb-item {
+    color: #006b57;
+}
+
+.breadcrumb-item:hover {
+    color: #00524b;
+}
+
+.breadcrumb-item.active {
+    color: #fdd55a;
+}
+
+/* Cards */
+.card {
+    border: none;
+}
+
+.card-body {
+    padding: 1.25rem;
+}
+
+/* Profile Image */
+.card-body img {
+    width: 150px;
+}
+
+/* Profile Info */
+.card .col-sm-3,
+.card .col-sm-9 {
+    padding: 0.25rem 1.25rem;
+}
+
+.card .col-sm-3 {
+    font-weight: bold;
+}
+
+/* Student Pass */
+#cards {
+    border-top: 1px solid #dee2e6;
+    padding-top: 1rem;
+}
+
+/* Chart */
+#cht {
+    max-width: 700px;
+    width: 100%;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .card-body img {
+        width: 100px;
+    }
+}

@@ -1,0 +1,111 @@
+/* Custom CSS for the Online Charity Management page */
+
+/* Buttons */
+.btn {
+    background-color: #fdd55a;
+    color: #006b57;
+    border-radius: 16px 14px 16px 14px;
+    min-width: 150px;
+    min-height: 40px;
+    font-size: large;
+}
+
+.btn:hover {
+    background-color: #006b57;
+    color: #fdd55a;
+}
+
+/* Header */
+#main_nav {
+    background-color: #fff;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.nav-link {
+    color: #000;
+}
+
+.nav-link:hover {
+    color: #006b57;
+}
+
+/* Banner Hero */
+.banner-wrapper {
+    background-color: #f8f9fa;
+}
+
+#index_banner {
+    padding: 100px 0;
+}
+
+.banner-heading {
+    color: #006b57;
+}
+
+/* Recent Work */
+.carousel-text {
+    background-color: #fdd55a;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.carousel-text h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.carousel-text p {
+    font-size: 16px;
+}
+
+.carousel-indicators button {
+    background-color: #006b57;
+    border: 1px solid #006b57;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+}
+
+.carousel-indicators .active {
+    background-color: #fdd55a;
+    border-color: #fdd55a;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #006b57;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+/* Footer */
+footer {
+    background-color: #006b57;
+    color: #fff;
+    padding-top: 40px;
+}
+
+.footer-icons i {
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+.light-300 {
+    font-weight: 300;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .banner-heading {
+        font-size: 20px;
+    }
+    .carousel-text {
+        padding: 20px;
+    }
+}
