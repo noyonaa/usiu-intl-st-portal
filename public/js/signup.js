@@ -25,7 +25,7 @@ function checkEmail(email) {
     var filter = /^([a-zA-Z0-9_\.\-])+\@usiu\.ac\.ke$/;
 
     if (!filter.test(email)) {
-        display('Please provide a valid USIU email address')
+        // display('Please provide a valid USIU email address')
         return false;
     } else {
         return true;
@@ -104,3 +104,8 @@ document.getElementById('Student').addEventListener('submit', e => {
         SignUp_Students()
 })
 
+
+module.exports = {
+    checkEmail,
+    isOnlyDigits
+}
