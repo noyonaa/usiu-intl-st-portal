@@ -45,30 +45,39 @@ function isOnlyDigits(string) {
 }
 
 //function to signup students
-async function SignUp_Students() {
-    const url = '/signup-student'
-    const data = {
-        full_name: document.getElementById('full_name').value,
-        id_number: document.getElementById('id_number').value,
-        email: document.getElementById('email').value,
-        password: document.getElementById('password').value,
-    }
+function SignUp_Students() {
+  const url = "/signup-student";
+  const data = {
+    full_name: document.getElementById("full_name").value,
+    id_number: document.getElementById("id_number").value,
+    email: document.getElementById("email").value,
+    password: document.getElementById("password").value,
+  };
 
-    const options = {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-    };
-    const response = await fetch(url, options);
-    const outcome = await response.json();
-    if (response.status === 401)
-        display(outcome.message)
-    if (response.status === 200)
-        display("New Student added")
-        setTimeout(()=>{window.location.href = '/login-page'},2000)
+  if (!checkEmail(data.email)) {
+    return; // Abort signup if email is invalid
+  }
 
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  };
+
+  fetch(url, options)
+    .then((response) => response.json())
+    .then((outcome) => {
+      if (response.status === 401) {
+        display(outcome.message);
+      } else if (response.status === 200) {
+        display("New Student added");
+        setTimeout(() => {
+          window.location.href = "/login-page";
+        }, 2000);
+      }
+    });
 }
 
 document.getElementById('Student').addEventListener('submit', e => {
