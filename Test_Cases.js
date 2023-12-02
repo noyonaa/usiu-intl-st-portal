@@ -15,6 +15,9 @@ function isOnlyDigits(string) {
     if (ascii < 48 || ascii > 57) {
       return false;
     }
+    }
+    if (string.length != 6) {
+        return false;
   }
   return true;
 }

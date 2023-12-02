@@ -77,7 +77,8 @@ const results_body = document.querySelector('#results');
         };
 
         request.send(param);
-    }
+}
+    
     function delete_data(id)
     {
         if(confirm("Are you sure you want to remove it?"))
@@ -102,6 +103,9 @@ const results_body = document.querySelector('#results');
             };
 
             request.send(param);
+
+            //export update_data function
+            module.exports = { update_data: update_data }
         }
     }
 
