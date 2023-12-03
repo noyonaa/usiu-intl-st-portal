@@ -104,12 +104,14 @@ const results_body = document.querySelector('#results');
 
             request.send(param);
 
-            //export update_data function
-            module.exports = { update_data: update_data }
         }
     }
 
-
+//export update_data function
+module.exports = {
+    load_data: load_data,
+    update_data: update_data,
+}
 
 
     

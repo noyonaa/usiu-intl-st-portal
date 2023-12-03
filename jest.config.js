@@ -1,5 +1,5 @@
 module.exports = {
-  testEnvironment: "jest-environment-jsdom",
+  testEnvironment: "node",
   moduleFileExtensions: ["js", "json", "jsx"],
   // Add other configuration options as needed
   verbose: true,

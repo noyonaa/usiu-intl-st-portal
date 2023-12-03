@@ -41,7 +41,7 @@ app.use(express.static('public')) //The folder for the assests
 // cookie parser middleware
 app.use(cookieParser());
 
-//session middleware
+// session middleware
 app.use(sessions({
   name: "User_Session",
   secret: "8Ge2xLWOImX2HP7R1jVy9AmIT0ZN68oSH4QXIyRZyVqtcl4z1I",
@@ -609,7 +609,6 @@ app.post('/signup-student', (request, response) => {
   console.log(request.body)
   const {full_name,id_number,email,password} = request.body
   try {
-      // connection.query(`INSERT INTO donors values ('${uuid4()}','${Donor_info.Donor_Fname}', '${Donor_info.Donor_Lname}', '${Donor_info.Donor_Number}', '${Donor_info.Donor_Email}', '${Donor_info.Donor_Password}')`, (err, result) => {
       connection.query('INSERT INTO students (id_number, full_name,email,password) values (?,?,?,?)',[id_number,full_name,email,Security.EncPass(password)],(err,result)=>{   
       if (err) {
               return response.status(401).json({
@@ -638,3 +637,4 @@ app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
 
+module.exports = {app}
