@@ -19,6 +19,12 @@ const mockDatabase = {
     },
     // Add more mock application data as needed
   ],
+  officials: [
+    // Mock officials data
+    { off_id: 1, off_name: "Official One", off_email: "official1@usiu.ac.ke" },
+    { off_id: 2, off_name: "Official Two", off_email: "official2@usiu.ac.ke" },
+    // Add more mock official data as needed
+  ],
   query: (sql, params, callback) => {
     const command = sql.split(" ")[0].toUpperCase();
 
@@ -50,6 +56,9 @@ const mockDatabase = {
       if (sql.includes("applications")) {
         return callback(null, mockDatabase.applications);
       }
+      else if (sql.includes("officials")) {
+      return callback(null, mockDatabase.officials);
+    } 
     } else if (command === "UPDATE" && sql.includes("applications")) {
       const [variableName, variableValue, idNumber] = params;
       const application = mockDatabase.applications.find(
@@ -60,10 +69,10 @@ const mockDatabase = {
         return callback(null, { message: "Status Updated" });
       }
       return callback(new Error("Application not found"));
-      }
+    }
     else {
-         return callback(new Error("Unmocked query"));
-      }
+      return callback(new Error("Unmocked query"));
+    }
   },
 };
 const app = express();
@@ -127,5 +136,14 @@ app.post("/update_data", (req, res) => {
   );
 });
 
+app.get("/get_official_list", (req, res) => {
+  mockDatabase.query("SELECT * FROM officials", null, (error, results) => {
+    if (error) {
+      console.error(error);
+      return res.status(500).send("Internal Server Error");
+    }
+    res.send(results);
+  });
+});
 
 export default app;
